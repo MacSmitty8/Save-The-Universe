@@ -11,7 +11,7 @@ class Ship {
         this.accuracy = accuracy;
     }
     battle(invader){
-        if(Math.random() < this.accuracy){
+        if(Math.random() > this.accuracy){
             console.log("================")
             console.log(`${this.name} missed their attack!`);
             return `${invader.name} hull: ${invader.hull}`
@@ -38,9 +38,9 @@ let alienShips = [];
 //this for loop will create the 6 alien ships that will be used against the USSA ship.
 
 for (let i = 0; i < 6; i++) {
-    alienShips[i] = new Ship(`Alien Invader ${i + 1}`, (Math.floor(Math.random() * (7 - 3) + 3)), (Math.floor(Math.random() * (5 - 2) + 2), (Math.floor(Math.random() * (0.8 - 0.6) + 0.6))))
+    alienShips[i] = new Ship(`Alien Invader ${i + 1}`, (Math.floor(Math.random() * (7 - 3) + 3)), (Math.floor(Math.random() * (5 - 2) + 2), (Math.round(Math.random() * 2) + 6) /10))
 }
-
+console.log(`accuracy`, (Math.round(Math.random() * 2) + 6) /10);
 //Make a boolean for controlling the loops and turns.
 
 let optionSelect = true;
