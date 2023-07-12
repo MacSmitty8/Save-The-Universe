@@ -1,3 +1,4 @@
+//Sets up the battle and retreat buttons
 let battleBtn = document.getElementById("battle");
 let retreatBtn = document.getElementById("retreat");
 
@@ -12,7 +13,7 @@ class Ship {
     }
     battle(invader){
         if(Math.random() > this.accuracy){
-            console.log("================")
+            console.log("============")
             console.log(`${this.name} missed their attack!`);
             return `${invader.name} hull: ${invader.hull}`
         } else {
@@ -65,13 +66,12 @@ battleBtn.addEventListener("click", function (){
         if (USSA.hull <= 0){
             window.setTimeout(function (){
                 //console.log the game over as well as show it on the screen.
-                console.log("The Aliens have won, and sucessfully invaded Earth. Game Over.");
+                console.log("The Aliens have won, and successfully invaded Earth. Game Over.");
             }, 3000)
         }
     } else {
         alienShips.shift();
         console.log(`Remaining Alien Ships: ${alienShips.length}`);
-
         //console log the victory if the while loop finishes due to all alien ships being destroyed while the USSA's hull is greater than 0.
         if(USSA.hull > 0 && alienShips.length === 0){
              console.log("The Alien Invaders have been defeated! Refresh the page if you want to play again.");
@@ -79,7 +79,7 @@ battleBtn.addEventListener("click", function (){
         optionSelect = true;
     }
 })
-//By clicking the retreat button
+//By clicking the retreat button, this will show in the console.log.
 retreatBtn.addEventListener("click",  function(){
     console.log("Earth has surrendered to the invaders... Game Over");
 })
